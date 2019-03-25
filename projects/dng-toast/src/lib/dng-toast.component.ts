@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-dngToast',
+  selector: 'dng-toast',
   template: `
     <p>
       dng-toast works!
