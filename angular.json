@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "dngToast": {
+      "root": "projects/dng-toast",
+      "sourceRoot": "projects/dng-toast/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dng-toast/tsconfig.lib.json",
+            "project": "projects/dng-toast/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dng-toast/src/test.ts",
+            "tsConfig": "projects/dng-toast/tsconfig.spec.json",
+            "karmaConfig": "projects/dng-toast/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dng-toast/tsconfig.lib.json",
+              "projects/dng-toast/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "dngToastSamples"

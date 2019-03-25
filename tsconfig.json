@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "dng-toast": [
+        "dist/dng-toast"
+      ],
+      "dng-toast/*": [
+        "dist/dng-toast/*"
+      ]
+    }
   }
 }
