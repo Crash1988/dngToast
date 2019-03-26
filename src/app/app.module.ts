@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import {DngToastModule} from 'dng-toast';
 
@@ -11,7 +13,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    DngToastModule
+    FormsModule,
+    BrowserAnimationsModule,
+    DngToastModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
