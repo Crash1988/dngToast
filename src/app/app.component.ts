@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-//import {  } from 'DngToastService';
 import {DngToastService} from 'dng-toast';
 
 @Component({
