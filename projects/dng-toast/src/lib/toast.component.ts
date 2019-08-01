@@ -26,7 +26,7 @@ export class ToastComponent implements OnInit, OnDestroy {
      }
 
   ngOnInit() {
-    this.intervalId = setTimeout(() => this.animationState = 'closing', 6000);
+    this.intervalId = setTimeout(() => this.animationState = 'closing', this.toastConfig.close);
   }
 
   ngOnDestroy() {

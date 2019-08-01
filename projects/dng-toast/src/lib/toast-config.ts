@@ -20,6 +20,7 @@ export interface ToastConfig {
         fadeOut: number;
         fadeIn: number;
     };
+    close:number;
 }
 
 export const defaultToastConfig: ToastConfig = {
@@ -31,6 +32,7 @@ export const defaultToastConfig: ToastConfig = {
         fadeOut: 500,
         fadeIn: 300,
     },
+    close: 6000,
 };
 
 export const TOAST_CONFIG_TOKEN = new InjectionToken('toast-config');
