@@ -9,7 +9,7 @@ import { toastAnimations, ToastAnimationState } from './toast-animation';
   selector: 'dng-toast1',
   templateUrl: './toast.component.html',
   styleUrls: ['toast.component.css'],
-  animations: [toastAnimations.fadeToast],
+  animations: [toastAnimations.fadeToast]
 })
 export class ToastComponent implements OnInit, OnDestroy {
   animationState: ToastAnimationState = 'default';
@@ -22,11 +22,20 @@ export class ToastComponent implements OnInit, OnDestroy {
     readonly data: ToastData,
     readonly ref: ToastRef,
     @Inject(TOAST_CONFIG_TOKEN) public toastConfig: ToastConfig
-    ) {
-     }
+  ) {
+    if (!this.toastConfig.animation) {
+      this.toastConfig.animation = {
+        fadeOut: 500,
+        fadeIn: 300
+      };
+    }
+  }
 
   ngOnInit() {
-    this.intervalId = setTimeout(() => this.animationState = 'closing', this.toastConfig.close);
+    this.intervalId = setTimeout(
+      () => (this.animationState = 'closing'),
+      this.toastConfig.close
+    );
   }
 
   ngOnDestroy() {

@@ -12,7 +12,11 @@ export class ToastRef {
   }
 
   getPosition() {
+    if( this.overlay && this.overlay.overlayElement) {
+
     return this.overlay.overlayElement.getBoundingClientRect();
+    }
+    return null;
   }
 }
 

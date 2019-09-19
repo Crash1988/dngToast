@@ -4,7 +4,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { MatIconModule } from '@angular/material/icon';
 
 import { DngToastComponent } from './dng-toast.component';
-import {defaultToastConfig, TOAST_CONFIG_TOKEN} from './toast-config';
+import {defaultToastConfig, ToastConfig, TOAST_CONFIG_TOKEN} from './toast-config';
 
 import {ToastComponent} from './toast.component';
 @NgModule({
@@ -16,13 +16,13 @@ import {ToastComponent} from './toast.component';
   exports: [DngToastComponent]
 })
 export class DngToastModule {
-  public static forRoot(config = defaultToastConfig): ModuleWithProviders {
+  public static forRoot(config?: ToastConfig): ModuleWithProviders {
     return {
       ngModule: DngToastModule,
       providers: [
         {
           provide: TOAST_CONFIG_TOKEN,
-          useValue: { ...defaultToastConfig, ...config },
+          useValue: config ? config :  defaultToastConfig,
         },
       ],
     };

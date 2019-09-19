@@ -20,7 +20,7 @@ export interface ToastConfig {
         fadeOut: number;
         fadeIn: number;
     };
-    close: number;
+    close?: number;
 }
 
 export const defaultToastConfig: ToastConfig = {

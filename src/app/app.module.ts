@@ -24,7 +24,7 @@ let toastConfig: ToastConfig = {
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    DngToastModule.forRoot(toastConfig)
+    DngToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
